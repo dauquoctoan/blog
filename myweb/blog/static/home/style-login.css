@@ -1,0 +1,70 @@
+.form-login{
+    margin-top: 70px;
+    background-color: rgb(44, 44, 30);
+    width: 500px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 17px;
+}
+.login-input-password{
+    margin-top: 20px;
+}
+.login-input{
+    margin-top: 30px;
+    background-color: rgb(44, 44, 30);
+}
+.login-lable{
+    margin-top: 30px;
+}
+.form-login-input{
+    border: 2px;
+    border-color: black;
+    outline: none;
+    margin: 0px 12px;
+    width: 250px;
+
+}
+.login-input-contain{
+    height: 30px;
+    display: inline-flex;
+}
+.msg-login{
+    font-size: 13px;
+}
+.form-login-item{
+    background-color: rgb(44, 44, 30);
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.label-input{
+    background-color: rgb(44, 44, 30);
+}
+.login-btn{
+    border: 0px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgb(44, 44, 30);
+}
+.login-btn:hover{
+    background-color: rgb(44, 44, 44);
+    color: orange;
+    border: 1px solid rgb(44, 44, 100);
+}
+.head-login-button{
+    border: 0px;
+    cursor: pointer;
+}
+.login-button-contai{
+    margin-top: 30px;
+}
+.link-login-register{
+    font-size: 13px;
+    background-color: rgb(44, 44, 30);
+}
+.contain-link-rederec{
+    background-color: rgb(44, 44, 30);
+}

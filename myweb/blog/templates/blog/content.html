@@ -1,0 +1,50 @@
+{% extends 'pages/base.html' %}
+{% block content %}
+<div class="body">
+    <div class="body--box">
+        <div class="body--item body--title">
+            <h1>{{post.title}}</h1>
+        </div>
+        {% for item in post.contents.all %}
+        <div class="body--item body--title">
+            <h2>{{item.title}}</h2>
+        </div>
+        <div class="body--item body--img">
+            <img src="{{item.image.url}}">
+        </div>
+
+        <div class="body--item body--content">
+            <p>
+               {{item.body|safe|linebreaks}}
+            </p>
+        </div>
+        {% endfor %}
+        <div class="body--item body--comment">
+            <h3 class="comment-title">Comment</h3>
+            {% for comment in post.comments.all %}
+            <div class="comment--items">
+                <div class="contai-comment"><i class="icon-comment fas fa-user-shield"></i></div>
+                <div class="contai-comment">
+                    <div class="comment--item comment--name">{{comment.author}}</div>
+                    <div class="comment--item comment--body">{{comment.body}}</div>
+                    <div class="comment--item comment-date">{{comment.date|date:'d-m-Y'}}</div>
+                </div>
+<!--                H:t-->
+            </div>
+            {% endfor %}
+            {% if user.username %}
+            <div class="form">
+                <form id="form" action="{% url 'post' post.id %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-comment">
+                        <input name="body" class="form-comment-input" type="text" placeholder="Comment">
+                        <button class="comment--button">Đăng</button>
+                    </div>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

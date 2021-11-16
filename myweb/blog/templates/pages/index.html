@@ -1,0 +1,37 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+ <div class="body">
+            <div class="body--box">
+                {% for item in page_obj %}
+                <div class="body-box-item">
+                    <div class="body--item body--title">
+                        <h1><a class="body-item-title-link" href="{% url 'post' item.id %}">{{item.title}}</a></h1>
+                        <label>{{item.date|date:"d-m-Y"}}</label>
+                    </div>
+                    <div class="body--item body--img">
+                        <img src="{{item.image.url}}">
+                    </div>
+                </div>
+                {%  endfor %}
+            </div>
+        </div>
+        <div class="pagination-home">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a class="paginate-number" href="?page=1"> <<< </a>
+                    <a class="paginate-number" href="?page={{ page_obj.previous_page_number }}">  &laquo;  </a>
+                {% endif %}
+
+                <span class="current">
+                    <a class="paginate-number>">{{ page_obj.number }}</a>
+                </span>
+        <!--of {{ page_obj.paginator.num_pages }}.-->
+                {% if page_obj.has_next %}
+                    <a class="paginate-number" href="?page={{ page_obj.next_page_number }}">  &raquo;  </a>
+                    <a class="paginate-number" href="?page={{ page_obj.paginator.num_pages }}"> >>> </a>
+                {% endif %}
+            </span>
+        </div>
+{% endblock %}

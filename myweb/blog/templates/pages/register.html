@@ -1,0 +1,51 @@
+{% extends 'pages/base.html' %}
+{% block title %}Đăng kí{% endblock %}
+{% block content %}
+ <div class="body">
+    <form method="post" action="{% url 'adduser'%}">
+        {% csrf_token %}
+        <div class="form-register">
+            <div class="form-register-item register-lable">
+                Đăng ký
+            </div>
+            <div class="form-register-contain">
+                    <label class="form-register-item msg-register">{{msg_u}}</label>
+                <div class="form-register-item register-input-username">
+                    <label class="label-register-input" >Tài khoản</label>
+                    <div class="register-input-contain">
+                        <input name="user" class="form-register-input" type="text" placeholder="Nhập vào tài khoản">
+                    </div>
+                </div>
+                <label class="form-register-item msg-register">{{msg_e}}</label>
+                <div class="form-register-item register-input-email">
+                    <label class="label-register-input" >Email</label>
+                    <div class="register-input-contain">
+                        <input name="email" class="form-register-input" type="email" placeholder="Nhập vào email">
+                    </div>
+                </div>
+                <label class="form-register-item msg-register"></label>
+                <div class="form-register-item register-input-password">
+                    <label class="label-register-input" for="">Mật khẩu</label>
+                    <div class="register-input-contain">
+                        <input name="password1" class="form-register-input" type="password" placeholder="Nhâp vào khẩu">
+                    </div>
+                </div>
+                <label class="form-register-item msg-register">{{msg_w}}</label>
+                <div class="form-register-item register-input-password">
+                    <label class="label-register-input" for="">Mật khẩu</label>
+                    <div class="register-input-contain">
+                        <input name="password2" class="form-register-input" type="password" placeholder="Nhập lại mật khẩu">
+                    </div>
+                </div>
+
+            </div>
+            <div class="register-button-contai">
+                <button class="login-btn" type="submit">Đăng ký</button>
+            </div>
+            <div class="register-rederec">
+                <a class="link-login-register" href="{% url 'login' %}">Đăng nhập ?</a>
+            </div>
+        </div>
+    </form>
+ </div>
+{% endblock %}

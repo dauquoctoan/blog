@@ -1,0 +1,84 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'home/style-login.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'home/style-register.css' %}">
+    </head>
+    <body>
+        <div id="header">
+            <div class="header-left">
+                <div class="icons">
+                    <i class="fas fa-home"></i>
+                </div>
+                <a href="{% url 'index' %}" class="content">Trang chủ</a>
+                <div class="content content__baiviet">
+                    <a class="content ">Bài viết</a>
+                    <div class="baiviet">
+                        <div class="danhsach">
+                            {% for item in category %}
+                            <a class="ds" href="{% url 'postbyid' item.id %}">{{item.title}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                {% if not user.username %}
+                <div class="icons">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                {% endif %}
+                {% if user.username %}
+                <div class="icons">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                {% endif %}
+                {% if user.username %}
+                <label style="cursor: default" class="content user-name">{{user.username}}</label>
+                {% endif %}
+                {% if not user.username %}
+                <a href="{% url 'register'%}" class="content">Đăng ký</a>
+                {% endif %}
+                {% if not user.username %}
+                <form class="content" method="POST" action="{% url 'login'%}">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.path }}">
+                    <button class="head-login-button"  type="content">Đăng nhập</button>
+                </form>
+
+                {% endif %}
+                {% if user.username %}
+                <a href="{% url 'logout'%}" class="content">Đăng xuất</a>
+                {% endif %}
+            </div>
+        </div>
+        {% block content %}
+        {% endblock %}
+        <div class="bottom">
+            <div class="bottom-contain">
+                <div class="bottom-item">
+                    <a href="">
+                        <i class="fab fa-facebook"></i>
+                        Facebook
+                    </a>
+                </div>
+                <div class="bottom-item">
+                    <a href="">
+                        <i class="fab fa-instagram"></i>
+                        Instagram
+                    </a>
+                </div>
+                <div class="bottom-item">
+                    <a href="">
+                        <i class="fab fa-linkedin"></i>
+                        Linkedin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

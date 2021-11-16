@@ -1,0 +1,247 @@
+/* header */
+
+*{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: rgb(255, 179, 71);
+    background-color: rgb(44, 44, 44);
+}
+#header{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background-color: rgb(44, 44, 30);
+    z-index: 1;
+}
+.header-right{
+    margin-right: 20px;
+    display: flex;
+    background-color: rgb(44, 44, 30);
+}
+.header-left{
+    margin-left: 20px;
+    display: flex;
+    background-color: rgb(44, 44, 30);
+}
+.user-name{
+    text-transform: uppercase;
+    cursor: none;
+}
+.content{
+    background-color: rgb(44, 44, 30);
+    padding: 10px 10px;
+    padding-top: 11px;
+    text-decoration: none;
+}
+.content:hover{
+    color: orange;
+    opacity: 0.98;
+    cursor: pointer;
+}
+/* bai viet */
+.body{
+    display: flex;
+    min-height: 80vh;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.body-box-item{
+    margin-top: 30px;
+}
+.body-item-title-link{
+    text-decoration: none;
+}
+.body-item-title-link:hover{
+    color: orange;
+}
+.baiviet{
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    display: None;
+    background-color: transparent;
+}
+.danhsach{
+    display: flex;
+    min-width: 300px;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    background-color: rgb(44, 44, 30);
+}
+.danhsach > a{
+    text-decoration: none;
+    font-size: 13px;
+}
+.content__baiviet:hover .baiviet{
+    display: block;
+}
+.ds{
+    padding:20px 10px;
+    background-color: rgb(44, 44, 30);
+    display: inline-block;
+    margin: 0px;
+}
+.ds:first-child{
+    margin-top: 15px;
+}
+.ds:hover{
+    color: orange;
+    background-color: rgb(44, 44, 44);
+    border: 2px solid rgb(44, 44, 100);
+}
+.icons{
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    background-color: rgb(44, 44, 30);
+}
+/* body */
+
+.body--box{
+    width: 60vw;
+    background-color: rgb(44, 44, 44);
+    margin: auto;
+}
+
+.body--item + .body--item{
+    margin-top: 20px;
+}
+.comment--items{
+    background-color: rgb(44, 44, 30);
+    display: flex;
+}
+.icon-comment{
+    margin-left: 10px;
+    margin-top: 5px;
+    align-items: center;
+}
+.contai-comment:last-child{
+    margin: 5px 0px;
+}
+.contai-comment{
+    background-color: rgb(44, 44, 30);
+}
+.comment--items +.comment--items{
+    margin-top: 10px;
+}
+.comment--name{
+    font-size: 18px;
+}
+.comment-body{
+    font-size: 40px;
+}
+.comment--item{
+    margin-left: 15px;
+    font-size: 20px;
+    background-color: rgb(44, 44, 30);
+}
+.body--content > p{
+    font-size: 20px;
+    font-style: initial;
+    text-align: justify;
+}
+.body--img{
+    display: flex;
+    justify-content: center;
+}
+.comment--content{
+    font-size: 16px;
+    background-color: rgb(44, 44, 30);
+}
+.comment-date{
+    font-size: 13px;
+}
+.comment--body{
+    margin-left: 30px;
+}
+.comment--button{
+    padding: 0px 20px;
+    border: 0px;
+    outline: none;
+    background-color: rgb(44, 44, 30);
+    cursor: pointer;
+}
+.comment--button:hover{
+    opacity: 0.9;
+    color: orange;
+    background-color: rgb(44, 44, 44);
+    border: 1px solid rgb(44, 44, 100);
+}
+.form{
+    display: flex;
+    margin-top: 20px;
+}
+#form{
+    margin: auto;
+}
+
+.form--login{
+    width: 60%;
+}
+.comment-title{
+    margin-bottom: 12px;
+}
+.form-comment{
+    width: 400px;
+    height: 30px;
+    display: flex;
+    background-color: rgb(44, 44, 30);
+    justify-content: space-around;
+}
+.form-comment-input{
+    color: rgb(255, 179, 71);
+    outline: none;
+    border: 0px;
+    background-color: rgb(44, 44, 30);
+    margin: 0px 0px 0px 10px;
+    flex: 1;
+}
+/* boottom */
+.bottom{
+    position:  relative;
+    bottom: 0px;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(44, 44, 30);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bottom-contain{
+    display: flex;
+}
+.bottom-item > a{
+    text-decoration: none;
+    padding-left: 15px;
+    background-color: rgb(44, 44, 30);
+}
+.bottom-item:hover{
+    opacity: 0.9;
+}
+/*paginator*/
+.pagination-home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.step-links > a{
+    text-decoration: none;
+    background-color: rgb(44, 44, 30);
+    margin: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+.current > a{
+    font-size: 18px;
+}

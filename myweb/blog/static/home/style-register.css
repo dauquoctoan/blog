@@ -1,0 +1,56 @@
+.form-register{
+    margin-top: 70px;
+    background-color: rgb(44, 44, 30);
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 17px;
+}
+.register-input-contain{
+    display: inline-flex;
+    padding: 10px 10px;
+    width: 300px;
+}
+.msg-register{
+    font-size: 13px;
+}
+.form-register-item{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(44, 44, 30);
+}
+.form-register-contain{
+    background-color: rgb(44, 44, 30);
+    margin-top: 0px;
+}
+.label-register-input{
+    background-color: rgb(44, 44, 30);
+}
+.form-register-input{
+    border: 0px;
+    outline: none;
+}
+.register-button-contai{
+    margin-top: 38px;
+}
+.login-btn{
+    border: 0px;
+    padding: 10px;
+    background-color: rgb(44, 44, 30);
+}
+.login-btn:hover{
+    background-color: rgb(44, 44, 44);
+    cursor: pointer;
+    border: 1px solid rgb(44, 44, 100);
+}
+.link-login-register{
+    background-color: rgb(44, 44, 30);
+    font-size: 13px;
+}
+.register-rederec{
+    background-color: rgb(44, 44, 30);
+}

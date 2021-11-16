@@ -1,0 +1,38 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}Đăng nhập{% endblock %}
+{% block content %}
+<div class="body">
+     <form method="post" action="{% url 'auth' %}">
+        <div class="form-login">
+            {% csrf_token %}
+            <div class="form-login-item login-lable">
+                Đăng nhập
+            </div>
+            <div class="login-input">
+                <label class="form-login-item msg-login"> {{msg_u}}</label>
+                <div class="form-login-item login-input-username">
+                    <label class="label-input">Tài khoản</label>
+                    <div class="login-input-contain">
+                        <input name="user" class="form-login-input" type="text" placeholder="Nhập vào tài khoản">
+                    </div>
+                </div>
+                <label class="form-login-item msg-login"> {{msg_w}}</label>
+                <div class="form-login-item login-input-password">
+                    <label class="label-input">Mật khẩu</label>
+                    <div class="login-input-contain">
+                        <input name="password" class="form-login-input" type="password" placeholder="Nhập vào mật khẩu">
+                    </div>
+                </div>
+                <input type="hidden" name="next" value="{{next}}">
+            </div>
+            <div class="login-button-contai">
+                <button class="login-btn" type="submit">Đăng nhập</button>
+            </div>
+            <div class="contain-link-rederec">
+                <a class="link-login-register" href="{% url 'register' %}">Đăng ký?</a>
+            </div>
+        </div>
+     </form>
+</div>
+{% endblock %}
